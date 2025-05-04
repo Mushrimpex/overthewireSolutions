@@ -1,0 +1,24 @@
+# OverTheWire Bandit - Nível 0 a 1
+
+**Objetivo**: The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220.
+The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.
+
+## Solução
+- Pesquisei como se conectar em um servidor pelo comando ssh.
+- Tentei usar as informações fornecidas pelo ctf.
+- Usei o comando: ssh bandit.labs.overthewire.org
+- Apareceu a seguinte mensagem:
+"You are trying to log into this SSH server on port 22, which is not intended.
+marip@bandit.labs.overthewire.org: Permission denied (publickey)."
+- Na mesma resposta aparece o endereço IP: 16.171.91.169
+- Agora vou tentar o seguinte comando: ssh bandit.labs.overthewire.org@16.171.91.169
+- Não deu certo
+- Tentei o comando: ssh -p 2220 bandit.labs.overthewire.org@16.171.91.169
+- A senha: "bandit0" não deu certo
+- Pesquisei e achei o site: https://www.hostgator.com.br/blog/conexao-ssh-3-formas-de-realizar-o-acesso-a-um-servidor/
+- 
+
+## Aprendizados
+
+- Navegação inicial em sistemas Linux
+- Importância de verificar arquivos óbvios primeiro
