@@ -1,7 +1,7 @@
 # OverTheWire Bandit - Nível 0 a 1
 
-**Objetivo**: The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220.
-The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.
+**Objetivo**: O objetivo deste nível é que você faça login no jogo usando SSH. O host ao qual você precisa se conectar é bandit.labs.overthewire.org, na porta 2220.
+O nome de usuário é bandit0 e a senha é bandit0. Após o login, acesse a página do Nível 1 para descobrir como vencê-lo.
 
 ## Solução
 - Pesquisei como se conectar em um servidor pelo comando ssh.
@@ -88,6 +88,70 @@ Resultado da tentativa:
   For support, questions or comments, contact us on discord or IRC.
 
   Enjoy your stay!
+
+Tradução para o português:
+
+--[ Jogando os jogos ]--
+
+  Esta máquina pode conter vários jogos de guerra.
+  Se você estiver jogando “algumjogo”, então:
+
+    * Os NOMES DE USUÁRIO são algumjogo0, algumjogo1, ...
+    * A maioria dos NÍVEIS está armazenada em /algumjogo/.
+    * As SENHAS para cada nível estão armazenadas em /etc/algumjogo_pass/.
+
+  O acesso de gravação aos diretórios home está desativado. É recomendável criar um
+  diretório de trabalho com um nome difícil de adivinhar em /tmp/.  Você pode usar o
+  comando “mktemp -d” para gerar um diretório aleatório e difícil de adivinhar
+  em /tmp/.  O acesso de leitura a /tmp/ está desativado e a /proc
+  restrito para que os usuários não possam espionar uns aos outros. Arquivos e diretórios
+  com nomes fáceis de adivinhar ou curtos serão excluídos periodicamente! O diretório /tmp
+  é limpo regularmente.
+  Jogue de forma correta:
+
+    * não deixe processos órfãos em execução
+    * não deixe arquivos de exploração espalhados
+    * não incomode outros jogadores
+    * não publique senhas ou spoilers
+    * mais uma vez, NÃO PUBLIQUE SPOILERS!
+      Isso inclui descrições da sua solução no seu blog ou site!
+
+--[ Dicas ]--
+
+  Esta máquina tem um processador de 64 bits e muitos recursos de segurança habilitados
+  por padrão, embora o ASLR tenha sido desativado.  Os seguintes
+  flags do compilador podem ser interessantes:
+
+    -m32                    compilar para 32 bits
+    -fno-stack-protector    desativar ProPolice
+    -Wl,-z,norelro          desativar relro
+
+  Além disso, a ferramenta execstack pode ser usada para sinalizar a pilha como
+  executável em binários ELF.
+
+  Por fim, o acesso à rede é limitado para a maioria dos níveis por um
+  firewall local.
+
+--[ Ferramentas ]--
+
+ Para sua conveniência, instalamos algumas ferramentas úteis que você pode encontrar
+ nos seguintes locais:
+
+    * gef (https://github.com/hugsy/gef) em /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) em /opt/pwndbg/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) em /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ Mais informações ]--
+
+  Para obter mais informações sobre jogos de guerra individuais, visite
+http://www.overthewire.org/wargames/
+
+  Para suporte, perguntas ou comentários, entre em contato conosco no Discord ou IRC.
+
+  Aproveite sua estadia!
+
 
 - Aternativamente tentei: ssh -p 2220 bandit0@bandit.labs.overthewire.org
 - Deu certo assim também!
