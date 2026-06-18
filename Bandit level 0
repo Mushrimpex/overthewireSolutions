@@ -143,8 +143,5 @@ http://www.overthewire.org/wargames/
 
   Aproveite sua estadia!
 
-
-- Aternativamente tentei: ssh -p 2220 bandit0@bandit.labs.overthewire.org
-- Deu certo assim também!
 ## Aprendizados
-- Aprendi a me conectar a um servidor pelo comando ssh tanto pelo ip quanto pelo nome do servidor @bandit.labs.overthewire.org.
+- Aprendi a me conectar a um servidor ssh pelo comando ssh e pelo nome do servidor @bandit.labs.overthewire.org.
