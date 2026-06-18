@@ -10,21 +10,12 @@ O nome de usuário é bandit0 e a senha é bandit0. Após o login, acesse a pág
 - Apareceu a seguinte mensagem:
 "You are trying to log into this SSH server on port 22, which is not intended.
 marip@bandit.labs.overthewire.org: Permission denied (publickey)."
-- Na mesma resposta aparece o endereço IP: 16.171.91.169
-- Agora vou tentar o seguinte comando: ssh bandit.labs.overthewire.org@16.171.91.169
-- Não deu certo
-- Tentei o comando: ssh -p 2220 bandit.labs.overthewire.org@16.171.91.169
 - A senha: "bandit0" não deu certo
-- Pesquisei e achei o site: https://www.hostgator.com.br/blog/conexao-ssh-3-formas-de-realizar-o-acesso-a-um-servidor/
-- $ ssh -p [PORTA] [USUARIO]@[IP-DO-SERVIDOR]
-- Substitua os termos da seguinte forma:
-- [PORTA] – por padrão a porta utilizada é a 22, mas se você for um usuário da HostGator,
-e estiver tentando se conectar numa Hospedagem Compartilhada (Planos P, M, Turbo e Revendas), nesse caso a porta é a 2222.
-[USUARIO] – usuário da conta cPanel a ser acessada. Caso você deseje conectar como root, inserir root.
-[IP-DO-SERVIDOR] – IP do servidor, seria algo como 123.45.67.89, caso saiba de um domínio que esteja apontado para o servidor da hospedagem,
-pode utilizar também o domínio como parâmetro aqui. Ex: ssh -p 22 root@dominio-principal.com.br
-- Usei o comando: ssh -p 2220 bandit0@16.171.91.169
-- Peguei o ip no proprio cmd no windows quando tentei conectar pela primeira vez
+- Pesquisei no site: "https://www.hostmidia.com.br/tutoriais/como-usar-ssh-no-windows-10-sem-o-putty/"
+- No site mostra que deve-se utilizar o nome do usuário antes do nome do dominio, assim:  
+- ssh -p 2220 bandit0@bandit.labs.overthewire.org
+- Deu certo e pediu a senha, digitei a senha fornecida pelo desafio.
+- Deu certo
 
 Resultado da tentativa:
 
